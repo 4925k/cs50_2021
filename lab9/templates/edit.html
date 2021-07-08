@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="/static/styles.css" rel="stylesheet">
+        <title>Birthdays</title>
+    </head>
+    <body>
+        <div class="jumbotron">
+            <h1>Birthdays</h1>
+        </div>
+        <div class="container">
+            <div class="section">
+                <h2>Edit Birthday</h2>
+                <form action="{{ url_for('edit', id=birthday.id) }}" method="post">
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" autofocus autocomplete="off" value="{{ birthday.name }}">
+                    <label for="day">Day:</label>
+                    <input type="text" name="day" autocomplete="off" value="{{ birthday.day }}">
+                    <label for="month">Month:</label>
+                    <input type="text" name="month" autocomplete="off" value="{{ birthday.month}}">
+                    <input type="submit" name="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
