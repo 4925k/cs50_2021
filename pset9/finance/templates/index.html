@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <h2>Username: {{userdata["username"]}}</h2>
+    <h3>Cash:     {{userdata["cash"]}}</h3>
+    <h3>Total:    {{userdata["total"]}}</h3>
+     <div>
+    <table id="table">
+        <thead><tr>
+            <th>Symbol</th>
+            <th>Shares</th>
+            <th>Price</th>
+            <th>Value</th>
+        </tr></thead>
+        {% for row in sharedata %}
+        <tr>
+            <td>{{row["symbol"]}}</td>
+            <td>{{row["SUM(shares)"]}}</td>
+            <td>{{row["price"]}}</td>
+            <td>{{row["value"]}}</td>
+        </tr>
+        {% endfor  %}
+    </table>
+    </div>
+{% endblock %}

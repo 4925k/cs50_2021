@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <div>
+    <table id="table">
+        <thead><tr>
+            <th>Symbol</th>
+            <th>Shares</th>
+            <th>Time</th>
+        </tr></thead>
+        {% for row in sharedata %}
+        <tr>
+            <td>{{row["symbol"]}}</td>
+            <td>{{row["shares"]}}</td>
+            <td>{{row["time"]}}</td>
+        </tr>
+        {% endfor  %}
+    </table>
+    </div>
+{% endblock %}
